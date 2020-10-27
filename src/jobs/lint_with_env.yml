@@ -16,8 +16,8 @@ steps:
         - .dart_tool
       key: 'dart-dependencies-{{ checksum "pubspec.lock" }}'
   - run:
-    name: Copy env sample
-    command: cp ./lib/env.dart.sample ./lib/env.dart
+      name: Copy env sample
+      command: cp ./lib/env.dart.sample ./lib/env.dart
   - run:
       name: Analyze code
       command: flutter analyze lib
