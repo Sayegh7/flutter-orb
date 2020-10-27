@@ -1,0 +1,23 @@
+description: Run static analysis for Flutter
+docker:
+  - image: 'cirrusci/flutter:stable'
+working_directory: ~/repo
+steps:
+  - checkout
+  - restore_cache:
+      keys:
+        - 'dart-dependencies-{{ checksum "pubspec.lock" }}'
+        - dart-dependencies-
+  - run:
+      name: Install Dependencies
+      command: flutter pub get
+  - run:
+      name: Build
+      command: flutter packages pub run build_runner build
+  - save_cache:
+      paths:
+        - .dart_tool
+      key: 'dart-dependencies-{{ checksum "pubspec.lock" }}'
+  - run:
+      name: Analyze code
+      command: flutter analyze lib
