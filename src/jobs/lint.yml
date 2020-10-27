@@ -11,9 +11,6 @@ steps:
   - run:
       name: Install Dependencies
       command: flutter pub get
-  - run:
-      name: Build
-      command: flutter packages pub run build_runner build
   - save_cache:
       paths:
         - .dart_tool
