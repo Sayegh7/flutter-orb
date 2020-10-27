@@ -1,11 +1,14 @@
 description: >
   Sample example description.
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
 usage:
   version: 2.1
   orbs:
-    flutter: sayegh/flutter@1.1.1
+    flutter-orb: sayegh/flutter-orb@1.0.0
   workflows:
-    flutter:
+    use-my-orb:
       jobs:
-        - flutter/lint:
-        - flutter/test:
+        - flutter-orb/lint
+        - flutter-orb/test
