@@ -1,12 +1,11 @@
 description: >
   Sample example description.
 usage:
-
-version: 2.1
-orbs:
-  flutter: sayegh/flutter@1.1.1
-workflows:
-  flutter:
-    jobs:
-      - flutter/lint:
-      - flutter/test:
+  version: 2.1
+  orbs:
+    flutter: sayegh/flutter@1.1.1
+  workflows:
+    flutter:
+      jobs:
+        - flutter/lint:
+        - flutter/test:
